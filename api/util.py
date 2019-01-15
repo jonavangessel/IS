@@ -19,6 +19,7 @@ def other(
     """
     return 1 if player_id == 2 else 2 # type: int
 
+
 def get_suit(card_index):
     """
     Returns the suit of a card
@@ -27,6 +28,7 @@ def get_suit(card_index):
     """
     return Deck.get_suit(card_index)
 
+
 def get_rank(card_index):
     """
     Returns the rank of a card
@@ -34,6 +36,7 @@ def get_rank(card_index):
     :return:
     """
     return Deck.get_rank(card_index)
+
 
 def get_card_name(card_index):
     # type: () -> int
@@ -79,10 +82,12 @@ def load_player(name, classname='Bot'):
 
     return player
 
+
 def ratio_points(state, player):
-	if state.get_points(player) + state.get_points(other(player)) != 0:
-		return state.get_points(player) / float((state.get_points(player) + state.get_points(other(player))))
-	return 0
+    if state.get_points(player) + state.get_points(other(player)) != 0:
+        return state.get_points(player) / float((state.get_points(player) + state.get_points(other(player))))
+    return 0
+
 
 def difference_points(state, player):
     return state.get_points(player) - state.get_points(other(player))
